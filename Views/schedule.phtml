@@ -22,7 +22,8 @@
         foreach ($day->day as $lessonWrap) {
             echo '<div class="lesson-wrapper">';
             foreach ($lessonWrap->lessons as $lesson) {
-                echo '<div class="lesson">';
+                $free = $lesson->free ? 'free' : '';
+                echo "<div class='lesson $free'>";
                 if (property_exists($lesson, 'subject'))
                     echo "<p class='subject'>$lesson->subject</p>";
                 if (property_exists($lesson, 'room'))
