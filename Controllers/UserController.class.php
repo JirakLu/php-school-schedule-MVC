@@ -8,7 +8,7 @@ class UserController extends AController
         $this->headers = array(
             'title' => 'user page',
             'keyWords' => 'user',
-            'description' => 'schedule for user'
+            'description' => 'schedule for users'
         );
 
         $status = GeneratorModel::getData($params[0]);
