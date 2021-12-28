@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --height: 4.5rem;
+    --max-width: 85rem;
+    --scheduleHeight: 60vh;
+    --scheduleWidth: 70vw;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-wrapper {
+    width: 100vw;
+    height: var(--height);
+    background-color: rgb(96 165 250);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.title-2 {
+    color: white;
+    letter-spacing: 0.025rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.spacing {
+    padding: 2px 0;
+    margin: 0 2rem;
+}
+
+.user-info {
+    background-color: rgb(137, 181, 232);
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    padding: 0.25rem 2rem;
+}
+.shadow {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+main {
+    height: calc(100% - (2 * var(--height)));
+}
+
+.main-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.content-wrapper {
+    padding: 2rem 2rem;
+    background: #dcdcdc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.btn {
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    display: inline-block;
+    background: rgb(96 165 250);
+    border: 3px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+    text-align: center;
+}
+
+.btn-hover:hover {
+    border: 3px solid rgb(96 165 250);
+    background: white;
+    color: rgb(96 165 250);
+}
+
+footer {
+    width: 100vw;
+    height: var(--height);
+    background-color: rgb(96 165 250);
+    color: white;
+    display: grid;
+    place-items: center;
+}
+/* Schedule */
+.schedule {
+    width: var(--scheduleWidth);
+    height: var(--scheduleHeight);
+    max-width: 1200px;
+    max-height: 700px;
+}
+.day {
+    width: var(--scheduleWidth);
+    height: calc(var(--scheduleHeight) / 6);
+    max-width: 1200px;
+    max-height: 140px;
+    display: flex;
+    flex-direction: row;
+}
+.lesson-wrapper {
+    width: calc(var(--scheduleWidth) / 12);
+    height: calc(var(--scheduleHeight) / 6);
+    max-width: 100px;
+    max-height: 140px;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.lesson {
+    background: #c0c0c0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+.lesson > .subject {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     color: black;
+     text-transform: uppercase;
+     font-weight: 700;
+     font-size: 1.3rem;
+     letter-spacing: 0.1rem;
+}
+.lesson > .room {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.lesson > .group {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.lesson > .teacher {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.lesson > .week {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.lesson > .from {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.lesson > .to {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75rem;
+}

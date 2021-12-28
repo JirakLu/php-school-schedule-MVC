@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <base href="/localhost"/>
+    <meta charset="UTF-8"/>
+    <title><?= $title ?></title>
+    <meta name="description" content="<?= $description ?>"/>
+    <meta name="keywords" content="<?= $keyWords ?>"/>
+    <link rel="stylesheet" href="/rozvrhProject/style.css" type="text/css"/>
+</head>
+
+<body>
+<header>
+    <nav class="nav-wrapper shadow">
+        <div class="nav">
+            <h1 class="title"><a href="rozvrhProject/home">Rozvrh Project</a></h1>
+            <form method="post">
+                <input type="text" name="user" id="user">
+                <input type="submit" value="Odeslat">
+            </form>
+            <form method="post">
+                <select id="room" name="room">
+                    <option value="b101">B101</option>
+                    <option value="b102">B102</option>
+                </select>
+                <input type="submit" value="Odeslat">
+            </form>
+            <form method="post">
+                <select id="teachers" name="teacher">
+                    <option value="baj">Bajer</option>
+                    <option value="sil">Silar</option>
+                </select>
+                <input type="submit" value="Odeslat">
+            </form>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="main-wrapper">
+        <?php $this->controller->renderView(); ?>
+    </div>
+</main>
+<footer>
+    <h1 class="title"><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click me!</a></h1>
+</footer>
+</body>
+</html>

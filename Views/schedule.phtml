@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+    <h1>Rozvrh pro - <?= $_SESSION['login'] ?></h1>
+    <!--    $schedule[0]->day[0]->lessons[0]->room-->
+</div>
+<div class="schedule">
+    <?php
+    $schedule = $_SESSION['schedule'];
+    echo '<div class="day" >';
+    $timestamps = $_SESSION['timeStamps'];
+    foreach ($timestamps as $stamp) {
+        echo '<div class="lesson-wrapper">';
+            echo '<div class="lesson">';
+                echo "<h1 class='subject'>" . $stamp['order'] . "</h1>";
+                echo "<p class='from'>" . $stamp['from'] . "</p>";
+                echo "<p class='to'>" . $stamp['to'] . "</p>";
+            echo '</div>';
+        echo '</div>';
+    }
+    echo '</div>';
+    foreach ($schedule as $day) {
+        echo '<div class="day">';
+        foreach ($day->day as $lessonWrap) {
+            echo '<div class="lesson-wrapper">';
+            foreach ($lessonWrap->lessons as $lesson) {
+                echo '<div class="lesson">';
+                if (property_exists($lesson, 'subject'))
+                    echo "<p class='subject'>$lesson->subject</p>";
+                if (property_exists($lesson, 'room'))
+                    echo "<p class='room'>$lesson->room</p>";
+                if (property_exists($lesson, 'teacher'))
+                    echo "<p class='teacher'>$lesson->teacher</p>";
+                if (property_exists($lesson, 'group'))
+                    echo "<p class='group'>$lesson->group</p>";
+                if (property_exists($lesson, 'week'))
+                    echo "<p class='week'>$lesson->week</p>";
+                echo '</div>';
+            }
+            echo '</div>';
+        }
+        echo '</div>';
+    }
+    ?>
+</div>
