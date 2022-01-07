@@ -30,7 +30,7 @@ class LessonWrapper
                     $group = str_replace(["(", ")"], ["S", ""], $lesson["group"]);
                 }
                 if (array_key_exists('change',$lesson)) {
-                    $change = isset($lesson["change"]) && $lesson["change"] == "change";
+                    $change = $lesson["change"] == "change";
                 }
                 if (array_key_exists('teacher',$lesson)) {
                     $teacher = $lesson["teacher"];

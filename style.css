@@ -236,6 +236,10 @@ footer {
     border-bottom:1px solid black ;
 }
 
+.change {
+    background: indianred;
+}
+
 .day .lesson-wrapper:last-child {
     border-right: 1px solid black;
 }
