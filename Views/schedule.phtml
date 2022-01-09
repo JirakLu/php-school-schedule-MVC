@@ -19,21 +19,24 @@
     foreach ($schedule as $day) {
         echo '<div class="day">';
         foreach ($day->day as $lessonWrap) {
-            echo '<div class="lesson-wrapper">';
+            $size = count($lessonWrap->lessons) > 1 ? "x".count($lessonWrap->lessons) : '';
+            echo "<div class='lesson-wrapper $size'>";
             foreach ($lessonWrap->lessons as $lesson) {
                 $free = $lesson->free ? 'free' : '';
                 $change = $lesson->change ? 'change' : '';
                 echo "<div class='lesson $free $change'>";
                 if (property_exists($lesson, 'subject'))
-                    echo "<p class='subject'>$lesson->subject</p>";
+                    $combined = $lesson->subject;
+                    if ($lesson->week !== '') {
+                        $combined = $lesson->week.$lesson->subject;
+                    }
+                    echo "<p class='subject'>$combined</p>";
                 if (property_exists($lesson, 'room'))
                     echo "<p class='room'>$lesson->room</p>";
                 if (property_exists($lesson, 'teacher'))
                     echo "<p class='teacher'>$lesson->teacher</p>";
                 if (property_exists($lesson, 'group'))
                     echo "<p class='group'>$lesson->group</p>";
-                if (property_exists($lesson, 'week'))
-                    echo "<p class='week'>$lesson->week</p>";
                 echo '</div>';
             }
             echo '</div>';

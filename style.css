@@ -10,8 +10,10 @@
 :root {
     --height: 4.5rem;
     --max-width: 85rem;
-    --scheduleHeight: 60vh;
+    --scheduleHeight: 65vh;
     --scheduleWidth: 70vw;
+    --smallFont: 0.75rem;
+    --bigFont: 1.3rem;
 }
 
 body {
@@ -171,7 +173,7 @@ footer {
      color: black;
      text-transform: uppercase;
      font-weight: 700;
-     font-size: 1.3rem;
+     font-size: var(--bigFont);
      letter-spacing: 0.1rem;
 }
 .lesson > .room {
@@ -181,7 +183,7 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
 }
 .lesson > .group {
     position: absolute;
@@ -190,7 +192,7 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
 }
 .lesson > .teacher {
     position: absolute;
@@ -199,7 +201,7 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
 }
 .lesson > .week {
     position: absolute;
@@ -208,7 +210,7 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
 }
 .lesson > .from {
     position: absolute;
@@ -217,7 +219,7 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
 }
 .lesson > .to {
     position: absolute;
@@ -226,7 +228,45 @@ footer {
     color: black;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--smallFont);
+}
+.x2 {
+    --smallFont: 0.63rem;
+    --bigFont: 1.1rem;
+}
+.x3 {
+    --smallFont: 0.5rem;
+    --bigFont: 1rem;
+}
+.x4 {
+    --smallFont: 0.5rem;
+    --bigFont: 0.8rem;
+}
+.x3 > .lesson > .teacher {
+    display: none;
+}
+.x3 > .lesson > .room {
+    left: unset;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.x3 > .lesson > .group {
+    bottom: 50%;
+    transform: translateY(50%);
+}
+.x4 > .lesson > .teacher {
+    display: none;
+}
+.x4 > .lesson > .room {
+    left: unset;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.x4 > .lesson > .group {
+    bottom: 50%;
+    transform: translateY(50%);
 }
 .lesson-wrapper {
     border-top:1px solid black;

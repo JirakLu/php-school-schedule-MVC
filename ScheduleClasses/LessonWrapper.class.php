@@ -36,7 +36,7 @@ class LessonWrapper
                     $teacher = $lesson["teacher"];
                 }
                 if (array_key_exists('week',$lesson)) {
-                    $week = $lesson["week"];
+                    $week = str_replace(" ","",$lesson["week"]);
                 }
                 $this->lessons[] = new Lesson($room, $subject, $group, $change, false, $teacher, $week);
             } else {
