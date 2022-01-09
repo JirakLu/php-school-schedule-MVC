@@ -230,6 +230,15 @@ footer {
     font-weight: 400;
     font-size: var(--smallFont);
 }
+.lesson > .tryda {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: var(--smallFont);
+}
 .x2 {
     --smallFont: 0.63rem;
     --bigFont: 1.1rem;

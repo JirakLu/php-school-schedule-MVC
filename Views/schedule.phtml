@@ -37,6 +37,8 @@
                     echo "<p class='teacher'>$lesson->teacher</p>";
                 if (property_exists($lesson, 'group'))
                     echo "<p class='group'>$lesson->group</p>";
+                if (property_exists($lesson, 'class'))
+                    echo "<p class='tryda'>$lesson->class</p>";
                 echo '</div>';
             }
             echo '</div>';

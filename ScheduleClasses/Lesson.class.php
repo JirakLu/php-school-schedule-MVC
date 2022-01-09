@@ -8,18 +8,20 @@ class Lesson
     public string $subject;
     public string $group;
     public string $week;
+    public string $class;
     public bool $change;
     public bool $free;
 
     private string $file = "./view/templates/lesson.phtml";
 
-    public function __construct(string $room, string $subject, string $group, bool $change, bool $free, string $teacher, string $week)
+    public function __construct(string $room, string $subject, string $group, string $class, bool $change, bool $free, string $teacher, string $week)
     {
         $this->room = $room;
         $this->teacher = $teacher;
         $this->subject = $subject;
         $this->group = $group;
         $this->change = $change;
+        $this->class = $class;
         $this->free = $free;
         $this->week = $week;
     }

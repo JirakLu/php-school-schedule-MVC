@@ -20,6 +20,7 @@ class LessonWrapper
                 $change = '';
                 $teacher = '';
                 $week = '';
+                $class = '';
                 if (array_key_exists('room',$lesson)) {
                     $room = str_replace(["(", ")"], "", $lesson["room"]);
                 }
@@ -38,9 +39,12 @@ class LessonWrapper
                 if (array_key_exists('week',$lesson)) {
                     $week = str_replace(" ","",$lesson["week"]);
                 }
-                $this->lessons[] = new Lesson($room, $subject, $group, $change, false, $teacher, $week);
+                if (array_key_exists('cls', $lesson)) {
+                    $class = $lesson['cls'];
+                }
+                $this->lessons[] = new Lesson($room, $subject, $group, $class, $change, false, $teacher, $week);
             } else {
-                $this->lessons[] = new Lesson('','','','',true,'','');
+                $this->lessons[] = new Lesson('','','','', '',true,'','');
             }
         }
 
