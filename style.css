@@ -128,6 +128,7 @@ footer {
     display: grid;
     place-items: center;
 }
+
 /* Schedule */
 .schedule {
     width: var(--scheduleWidth);
@@ -239,6 +240,8 @@ footer {
     font-weight: 400;
     font-size: var(--smallFont);
 }
+
+/* Smaller lessons */
 .x2 {
     --smallFont: 0.63rem;
     --bigFont: 1.1rem;
@@ -251,32 +254,21 @@ footer {
     --smallFont: 0.5rem;
     --bigFont: 0.8rem;
 }
-.x3 > .lesson > .teacher {
+.x3,.x4 > .lesson > .teacher {
     display: none;
 }
-.x3 > .lesson > .room {
+.x3,.x4 > .lesson > .room {
     left: unset;
     right: 2px;
     top: 50%;
     transform: translateY(-50%);
 }
-.x3 > .lesson > .group {
+.x3,.x4 > .lesson > .group {
     bottom: 50%;
     transform: translateY(50%);
 }
-.x4 > .lesson > .teacher {
-    display: none;
-}
-.x4 > .lesson > .room {
-    left: unset;
-    right: 2px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.x4 > .lesson > .group {
-    bottom: 50%;
-    transform: translateY(50%);
-}
+
+/* Border */
 .lesson-wrapper {
     border-top:1px solid black;
     border-left: 1px solid black;
@@ -284,11 +276,10 @@ footer {
 .day:last-child .lesson-wrapper {
     border-bottom:1px solid black ;
 }
+.day .lesson-wrapper:last-child {
+    border-right: 1px solid black;
+}
 
 .change {
     background: indianred;
-}
-
-.day .lesson-wrapper:last-child {
-    border-right: 1px solid black;
 }
