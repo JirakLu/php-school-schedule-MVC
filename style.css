@@ -155,6 +155,9 @@ footer {
     padding: 0.25rem;
     overflow: hidden;
 }
+.lesson:empty {
+    display: none;
+}
 .lesson {
     background: #c0c0c0;
     position: relative;
