@@ -4,59 +4,27 @@ class LessonWrapper
 {
 
     public array $lessons;
-    private int $column;
-    private int $row;
 
-    public function __construct(array $lessons, int $column, int $row)
+    public function __construct(array $lessons)
     {
-        $this->column = $column;
-        $this->row = $row + 1;
 
-        foreach ($lessons as $lesson){
-            if ($lesson != 'free') {
-                $room = '';
-                $subject = '';
-                $group = '';
-                $change = '';
-                $teacher = '';
-                $week = '';
-                $class = '';
-                if (array_key_exists('room',$lesson)) {
-                    $room = str_replace(["(", ")"], "", $lesson["room"]);
-                }
-                if (array_key_exists('subject',$lesson)) {
-                    $subject = str_replace(["(", ")"], "", $lesson["subject"]);
-                }
-                if (array_key_exists('group',$lesson)) {
-                    $group = str_replace(["(", ")"], ["S", ""], $lesson["group"]);
-                }
-                if (array_key_exists('change',$lesson)) {
-                    $change = $lesson["change"] == "change";
-                }
-                if (array_key_exists('teacher',$lesson)) {
-                    $teacher = $lesson["teacher"];
-                }
-                if (array_key_exists('week',$lesson)) {
-                    $week = str_replace(" ","",$lesson["week"]);
-                }
-                if (array_key_exists('cls', $lesson)) {
-                    $class = $lesson['cls'];
-                }
-                $this->lessons[] = new Lesson($room, $subject, $group, $class, $change, false, $teacher, $week);
-            } else {
+        foreach ($lessons as $lesson) {
+            if ($lesson === 'free'){
                 $this->lessons[] = new Lesson('','','','', '',true,'','');
+            } else {
+                $this->lessons[] = new Lesson(
+                    array_key_exists('room',$lesson) ? str_replace(["(", ")"], "", $lesson["room"]) : '',
+                    array_key_exists('subject',$lesson) ? str_replace(["(", ")"], "", $lesson["subject"]) : '',
+                    array_key_exists('group',$lesson) ? str_replace(["(", ")"], ["S", ""], $lesson["group"]) : '',
+                    array_key_exists('cls', $lesson) ? $lesson['cls'] : '',
+                    array_key_exists('change', $lesson) && $lesson["change"] == "change",
+                    false,
+                    array_key_exists('teacher',$lesson) ? $lesson["teacher"] : '',
+                    array_key_exists('week',$lesson) ? str_replace(" ","",$lesson["week"]) : ''
+                );
             }
         }
 
     }
 
-    public function createHtml(): string
-    {
-        $html = "<div class='lesson-wrapper' style='grid-row: " . $this->row + 1 . "; grid-column: " . $this->column + 2 . "'>";
-        foreach ($this->lessons as $lesson) {
-            $html .= $lesson->createHtml();
-        }
-        $html .= "</div>";
-        return $html;
-    }
 }

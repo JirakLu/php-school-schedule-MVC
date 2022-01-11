@@ -254,16 +254,29 @@ footer {
     --smallFont: 0.5rem;
     --bigFont: 0.8rem;
 }
-.x3,.x4 > .lesson > .teacher {
+.x3 > .lesson > .teacher {
     display: none;
 }
-.x3,.x4 > .lesson > .room {
+.x3 > .lesson > .room {
     left: unset;
     right: 2px;
     top: 50%;
     transform: translateY(-50%);
 }
-.x3,.x4 > .lesson > .group {
+.x3 > .lesson > .group {
+    bottom: 50%;
+    transform: translateY(50%);
+}
+.x4 > .lesson > .teacher {
+    display: none;
+}
+.x4 > .lesson > .room {
+    left: unset;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.x4 > .lesson > .group {
     bottom: 50%;
     transform: translateY(50%);
 }

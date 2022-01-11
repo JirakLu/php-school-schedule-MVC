@@ -2,7 +2,6 @@
 
 class FetchData
 {
-
     static function fetch(string $class)
     {
 
@@ -34,9 +33,7 @@ class FetchData
         $resp = curl_exec($curl);
         curl_close($curl);
 
-        $array = json_decode($resp, true);
-
-        return $array;
+        return json_decode($resp, true);
     }
 
 }
